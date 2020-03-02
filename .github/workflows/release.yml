@@ -16,8 +16,9 @@ jobs:
     - name: Setup
       uses: actions/setup-node@v1
       with:
-        registry-url: 'https://npm.pkg.github.com'
-        version: 13.9
+        node-version: 13.9
+        registry-url: https://npm.pkg.github.com/
+        scope: '@pderas'
 
     - name: Cache
       uses: actions/cache@v1
