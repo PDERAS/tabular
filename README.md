@@ -76,9 +76,9 @@ Vue.use(PderasTable, {
         <TableHeader>Index</TableHeader>
 
         <!-- 'Sortable' header -->
-        <TableHeader sort="name">Name</TableHeader>
+        <TableHeader sort-by="name">Name</TableHeader>
 
-        <TableHeader sort="created_at">
+        <TableHeader sort-by="created_at">
             <!-- Override the order indicator & default slot -->
             <!-- both default & order slots provide 'active', and 'order' props -->
             <template #default="{ active, order }">Created Date - {{ order }} - {{ active }}</template>
@@ -132,7 +132,7 @@ export default {
     }),
 
     methods: {
-        sortDate({ sortBy, order }) {
+        sortData({ sortBy, order }) {
             // make your ajax call, sorting and ordering.
         },
 
