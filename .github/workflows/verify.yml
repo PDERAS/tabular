@@ -30,7 +30,9 @@ jobs:
           restore-keys: ${{ runner.OS }}-npm-cache-
 
       - name: Install
-        run: npm install
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Lint
         run: npm run lint
