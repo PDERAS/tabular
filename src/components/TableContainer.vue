@@ -11,6 +11,7 @@ export default {
             userSuppliedData: _ => this.data
         };
     },
+
     props: {
         data: {
             type: Array,

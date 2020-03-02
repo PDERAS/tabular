@@ -14,18 +14,23 @@
 
 <script>
 export default {
-    inject: ['userSuppliedData'],
+    inject: [
+        'userSuppliedData'
+    ],
+
     props: {
         keySelector: {
             type: [String, Function],
             default: 'id'
         }
     },
+
     computed: {
         getData() {
             return this.userSuppliedData();
         }
     },
+
     methods: {
         getKey(item) {
             if (typeof(this.keySelector) === 'string') {

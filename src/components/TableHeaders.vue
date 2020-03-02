@@ -19,21 +19,25 @@ export default {
             }
         };
     },
+
     props: {
         defaultSort: {
             type: String,
             default: ''
         },
+
         defaultOrder: {
             type: String,
             default: 'asc',
             validator: val => Object.keys(orders).includes(val)
         }
     },
+
     data: _ => ({
         selectedSort: '',
         selectedOrder: '',
     }),
+
     computed: {
         activeSort: {
             get() {
@@ -53,6 +57,7 @@ export default {
                 this.emitUpdates();
             }
         },
+
         activeOrder: {
             get() {
                 return this.selectedOrder || this.defaultOrder;

@@ -22,11 +22,17 @@
     <TableBody>
         <!-- Use a template to define the layout of each row -->
         <template #row="{ row:thing, index }">
-            <TableCell>{{ index }} - {{ thing.name }}</TableCell>
+            <TableCell>
+                {{ index }} - {{ thing.name }}
+            </TableCell>
+
             <TableCell>
                 {{ thing.created_at }}
             </TableCell>
-            <TableCell><FontAwesomeIcon icon="trash" /></TableCell>
+
+            <TableCell>
+                <FontAwesomeIcon icon="trash" />
+            </TableCell>
         </template>
     </TableBody>
 

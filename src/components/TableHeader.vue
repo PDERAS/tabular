@@ -16,25 +16,34 @@
 
 <script>
 export default {
-    inject: ['activeSort', 'activeOrder', 'updateActiveSort'],
+    inject: [
+        'activeSort',
+        'activeOrder',
+        'updateActiveSort'
+    ],
+
     provide() {
         return {
             parentActive: _ => this.isActive
         };
     },
+
     props: {
         sortBy: {
             type: String,
             default: ''
         }
     },
+
     computed: {
         isActive() {
             return this.sortBy && this.sortBy === this.activeSort();
         },
+
         order() {
             return this.activeOrder();
         },
+
         sharedProps() {
             return {
                 active: this.isActive,
@@ -42,6 +51,7 @@ export default {
             };
         }
     },
+
     methods: {
         selectHeader() {
             if (this.sortBy) {

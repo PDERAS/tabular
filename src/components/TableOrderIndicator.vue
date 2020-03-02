@@ -5,7 +5,10 @@
 
 <script>
 export default {
-    inject: ['activeOrder'],
+    inject: [
+        'activeOrder'
+    ],
+
     computed: {
         vBind() {
             if (typeof this.ComponentOverrideProps === 'function') {
@@ -17,7 +20,7 @@ export default {
             return {};
         },
 
-        /** Placeholders (Required for mixin, but not provided) */
+        /** Placeholder (Injected during component registration) */
         ComponentOverrideProps() { return null; }
     }
 };
