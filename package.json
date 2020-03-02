@@ -35,10 +35,9 @@
     "url": "https://github.com/PDERAS/tabular/issues"
   },
   "//": "no dependencies!",
-  "dependencies": {
-    "@pderas/eslint-config": "^1.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@pderas/eslint-config": "^1.1.1",
     "@vue/babel-preset-app": "^4.2.3",
     "@vue/cli-plugin-babel": "^4.2.3",
     "@vue/cli-plugin-eslint": "^4.2.3",
