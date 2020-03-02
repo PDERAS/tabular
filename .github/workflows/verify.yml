@@ -20,7 +20,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           npm-registry:
-            - registry: https://registry.npmjs.org/
             - registry: https://npm.pkg.github.com/
               scope: '@pderas'
 
