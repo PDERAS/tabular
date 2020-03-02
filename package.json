@@ -1,6 +1,6 @@
 {
   "name": "@pderas/tabular",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A new vue table component from pderas",
   "main": "dist/tables-and-chairs.umd.min.js",
   "author": "Reed Jones <reed.jones@pderas.com>",
