@@ -19,18 +19,20 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: https://npm.pkg.github.com/
-          scope: '@pderas'
+          npm-registry:
+            - registry: 'https://registry.npmjs.org'
+            - registry: https://npm.pkg.github.com/
+              scope: '@pderas'
 
       - name: Cache
         uses: actions/cache@v1
         with:
           path: node_modules
-          key: ${{ runner.OS }}-npm-cache-2-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.OS }}-npm-cache-2-
+          key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.OS }}-npm-cache-
 
       - name: Install
-        run: npm ci
+        run: npm install
 
       - name: Lint
         run: npm run lint
