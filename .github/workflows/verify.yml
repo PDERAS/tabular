@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           npm-registry:
-            url: https://npm.pkg.github.com/
+            registry: https://npm.pkg.github.com/
             scope: '@pderas'
 
       - name: Cache
