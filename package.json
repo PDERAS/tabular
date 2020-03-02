@@ -2,8 +2,7 @@
   "name": "@pderas/tabular",
   "version": "1.0.0",
   "description": "A new vue table component from pderas",
-  "//main": "dist/tables-and-chairs.umd.min.js",
-  "main": "src/index.js",
+  "main": "dist/tables-and-chairs.umd.min.js",
   "author": "Reed Jones <reed.jones@pderas.com>",
   "license": "MIT",
   "publishConfig": {
@@ -44,6 +43,8 @@
     "@vue/cli-plugin-eslint": "^4.2.3",
     "@vue/cli-service": "^4.2.3",
     "eslint": "^6.8.0",
+    "sass": "^1.26.2",
+    "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
   }
 }

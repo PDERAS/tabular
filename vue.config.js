@@ -1,3 +1,10 @@
 module.exports = {
-    css: { extract: false }
+    css: {
+        extract: false,
+        loaderOptions: {
+            sass: {
+                implementation: require('sass')
+            }
+        }
+    }
 };
