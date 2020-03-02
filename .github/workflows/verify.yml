@@ -19,9 +19,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          npm-registry:
-            - registry: https://npm.pkg.github.com/
-              scope: '@pderas'
+          registry-url: https://npm.pkg.github.com/
+          scope: '@pderas'
 
       - name: Cache
         uses: actions/cache@v1
