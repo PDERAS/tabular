@@ -8,15 +8,22 @@
 export default {
     provide() {
         return {
-            userSuppliedData: _ => this.data
+            userSuppliedData: _ => this.data,
+            draggable: _ => !!this.$listeners['drag'],
+            setData: arr => this.$emit('drag', arr)
         };
+    },
+
+    model: {
+        prop: 'data',
+        event: 'drag'
     },
 
     props: {
         data: {
             type: Array,
             required: true
-        }
+        },
     },
 };
 </script>

@@ -1,5 +1,21 @@
 <template>
-<div class="tabular-body">
+<DragonDrop
+    v-if="isDraggable"
+    v-slot="{ item, index }"
+    tag="div"
+    :item-key="keySelector"
+    class="tabular-body"
+    :value="getData"
+    @input="setData">
+    <div class="tabular-row">
+        <slot
+            :index="index"
+            :row="item"
+            name="row" />
+    </div>
+</DragonDrop>
+
+<div v-else class="tabular-body">
     <div
         v-for="(item, idx) in getData"
         :key="getKey(item)"
@@ -13,10 +29,18 @@
 </template>
 
 <script>
+import { DragonDrop } from '@pderas/dragon-drop';
+
 export default {
     inject: [
-        'userSuppliedData'
+        'userSuppliedData',
+        'draggable',
+        'setData'
     ],
+
+    components: {
+        DragonDrop
+    },
 
     props: {
         keySelector: {
@@ -28,6 +52,10 @@ export default {
     computed: {
         getData() {
             return this.userSuppliedData();
+        },
+
+        isDraggable() {
+            return this.draggable();
         }
     },
 
