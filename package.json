@@ -1,6 +1,6 @@
 {
   "name": "@pderas/tabular",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A new vue table component from pderas",
   "main": "dist/tables-and-chairs.umd.min.js",
   "author": "Reed Jones <reed.jones@pderas.com>",
@@ -34,8 +34,9 @@
   "bugs": {
     "url": "https://github.com/PDERAS/tabular/issues"
   },
-  "//": "no dependencies!",
-  "dependencies": {},
+  "dependencies": {
+    "@pderas/dragon-drop": "^1.2.0"
+  },
   "devDependencies": {
     "@pderas/eslint-config": "^1.1.1",
     "@vue/babel-preset-app": "^4.2.3",

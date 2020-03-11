@@ -2,6 +2,7 @@ import { componentsLoader } from './utils';
 
 export default {
     install(Vue, options = {}) {
+
         // Globally register table components
         Object.entries(componentsLoader(require.context('./components', false, /\.vue$/i)))
             .forEach(([name, component]) => {
