@@ -15,7 +15,7 @@
   "scripts": {
     "lint": "eslint src --ext .js,.vue",
     "lint:fix": "eslint src --ext .js,.vue --fix",
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve ./public/example.js",
     "watch": "vue-cli-service build --watch --target lib --name tables-and-chairs ./src/index.js",
     "bundle": "vue-cli-service build --target lib --name tables-and-chairs ./src/index.js",
     "build": "npm run lint && npm run bundle"
@@ -46,6 +46,7 @@
     "eslint": "^6.8.0",
     "sass": "^1.26.2",
     "sass-loader": "^8.0.2",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   }
 }

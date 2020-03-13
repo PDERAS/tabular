@@ -21,7 +21,8 @@ export default {
         },
 
         /** Placeholder (Injected during component registration) */
-        ComponentOverrideProps() { return null; }
+        ComponentOverrideProps() { return null; },
+        componentName() { return null; }
     }
 };
 </script>
