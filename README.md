@@ -11,7 +11,7 @@
 `npm i @pderas/tabular`
 
 ```js
-import PderasTable from '@pderas/table';
+import PderasTable from '@pderas/tabular';
 Vue.use(PderasTable);
 ```
 
@@ -20,7 +20,7 @@ Vue.use(PderasTable);
 // get the desired component
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-import PderasTable from '@pderas/table';
+import PderasTable from '@pderas/tabular';
 
 Vue.use(PderasTable, {
     // Override the builtin components
