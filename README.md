@@ -1,5 +1,5 @@
 # Tabular v2
-# Vue 3 Only
+# Vue 3 Only (use v1.*.* for vue 2)
 
 > Tab"u*lar (?),
 >
@@ -151,4 +151,32 @@ export default {
     }
 }
 </script>
+```
+
+## Development Setup
+
+```sh
+npm install
+npm link
+npm run watch
+```
+
+## Link package in project
+
+```sh
+npm link @pderas/tabular
+npm run hot
+```
+
+### Update major/minor version in package.json and publish new package to npm
+
+```sh
+version: "2.0.0" -> version: "2.0.1"
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+npm publish
 ```
