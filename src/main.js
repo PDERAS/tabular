@@ -24,4 +24,4 @@ export default {
             app.component(name, componentConfig);
         });
     }
-}
+};

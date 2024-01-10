@@ -10,7 +10,9 @@
   "license": "MIT",
   "scripts": {
     "build": "vite build",
-    "watch": "vite build --watch"
+    "watch": "vite build --watch",
+    "lint": "eslint src --ext .js,.vue",
+    "lint:fix": "eslint src --fix --ext .js,.vue"
   },
   "dependencies": {
     "vue": "^3.3.11"
@@ -30,10 +32,15 @@
     "url": "https://github.com/PDERAS/tabular/issues"
   },
   "devDependencies": {
+    "@pderas/eslint-config": "^3.0.2",
     "@vitejs/plugin-vue": "^4.5.2",
-    "vite": "^5.0.10"
+    "vite": "^5.0.10",
+    "vite-plugin-eslint": "^1.8.1"
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "main": "./dist/tabular.umd.cjs",
   "module": "./dist/tabular.js",
   "exports": {
