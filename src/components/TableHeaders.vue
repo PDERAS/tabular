@@ -78,11 +78,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss" scoped>
-.tabular-headers {
-    display: grid;
-    grid-template-columns: var(--table-column-size, repeat(5, 1fr));
-    grid-gap: var(--table-gap-size, 1rem);
-}
-</style>

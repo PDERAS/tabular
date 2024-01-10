@@ -1,5 +1,5 @@
-<template functional>
-<div class="tabular-cell" :class="[data.class, data.staticClass]">
+<template>
+<div class="tabular-cell">
     <slot />
 </div>
 </template>

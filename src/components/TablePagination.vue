@@ -13,7 +13,7 @@
         <slot name="previous">Previous</slot>
     </TablePaginationButton>
 
-    <template v-if="$scopedSlots.numbers">
+    <template v-if="$slots.numbers">
         <TablePaginationButton
             v-for="page in paginationRange"
             :key="page"
@@ -106,9 +106,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss" scoped>
-.tabular-pagination-row {
-    display: flex;
-}
-</style>
