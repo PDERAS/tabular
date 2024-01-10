@@ -166,6 +166,8 @@ npm run watch
 ```sh
 npm link @pderas/tabular
 npm run hot
+
+@import 'tables.scss'; //template repo will have it
 ```
 
 ### Update major/minor version in package.json and publish new package to npm
