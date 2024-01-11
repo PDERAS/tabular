@@ -9,7 +9,7 @@
   "author": "Ben Hojka <ben.hojka@fabledsolutions.com>",
   "license": "MIT",
   "scripts": {
-    "build": "vite build",
+    "bundle": "vite build",
     "watch": "vite build --watch",
     "lint": "eslint src --ext .js,.vue",
     "lint:fix": "eslint src --fix --ext .js,.vue"

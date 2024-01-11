@@ -179,6 +179,6 @@ version: "2.0.0" -> version: "2.0.1"
 ### Compile and Minify for Production
 
 ```sh
-npm run build
+npm run bundle
 npm publish
 ```
