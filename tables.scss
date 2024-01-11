@@ -1,0 +1,88 @@
+/* shared table classes */
+.tabular {
+    &-body {
+        @apply grid;
+        grid-template-columns: 1fr;
+        grid-gap: var(--table-gap-size, 1rem);
+    }
+
+    &-container {
+        @apply grid;
+        grid-template-columns: 1fr;
+        grid-gap: var(--table-gap-size, 1rem);
+        /* Row Sizing Definition */
+        /* Gets passed to grid-template-columns */
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns */
+        --table-column-size: repeat(2, 100px) minmax(400px, 50%) 1fr;
+
+        /* gap between cells */
+        --table-gap-size: 0rem;
+    }
+
+    &-headers {
+        @apply bg-primary text-white font-bold p-4 rounded-tr rounded-tl grid;
+        grid-template-columns: var(--table-column-size, repeat(5, 1fr));
+        grid-gap: var(--table-gap-size, 1rem);
+
+        .sortable {
+            @apply cursor-pointer flex gap-2 items-center;
+        }
+    }
+
+    &-row {
+        /* basic table body styles */
+        @apply bg-white px-4 py-2 items-center text-sm grid;
+        grid-template-columns: var(--table-column-size, repeat(5, 1fr));
+        grid-gap: var(--table-gap-size, 1rem);
+
+        &:nth-child(odd) {
+            @apply bg-gray-100;
+        }
+    }
+
+    /* Pagination button styles */
+    &-pagination {
+        &-row {
+            @apply flex items-center justify-center mt-4;
+        }
+
+        &-button {
+            @apply bg-white h-8 border border-gray-200 flex items-center justify-center shadow-md cursor-pointer mx-2 rounded;
+            min-width: 4rem;
+
+            &:hover,
+            &.active {
+                @apply bg-gray-200;
+            }
+        }
+    }
+}
+
+.users-table {
+    --table-column-size: repeat(5, 1fr);
+}
+
+.table-actions {
+    .menu {
+        animation: menu 0.3s ease forwards;
+    }
+
+    @keyframes menu {
+        from {
+            -webkit-transform: translate3d(0, 30px, 0);
+            transform: translate3d(0, 30px, 0)
+        }
+
+        to {
+            -webkit-transform: translate3d(0, 20px, 0);
+            transform: translate3d(0, 20px, 0)
+        }
+    }
+
+    .open.fa-chevron-down {
+        -webkit-transition: transform 0.5s;
+        /* Safari */
+        transition: transform 0.5s;
+        transform: rotateX(180deg);
+    }
+}

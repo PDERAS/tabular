@@ -1,5 +1,5 @@
-<template functional>
-<div class="tabular-footer" :class="[data.class, data.staticClass]">
+<template>
+<div class="tabular-footer">
     <slot />
 </div>
 </template>

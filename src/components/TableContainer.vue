@@ -9,7 +9,7 @@ export default {
     provide() {
         return {
             userSuppliedData: _ => this.data,
-            draggable: _ => !!this.$listeners['drag'],
+            draggable: _ => !!this.$attrs['drag'],
             setData: arr => this.$emit('drag', arr)
         };
     },
@@ -27,10 +27,3 @@ export default {
     },
 };
 </script>
-<style scoped>
-.tabular-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: var(--table-gap-size, 1rem);
-}
-</style>

@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { DragonDrop } from '@pderas/dragon-drop';
+import DragonDrop from './DragonDrop.vue';
 
 export default {
     inject: [
@@ -70,17 +70,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss" scoped>
-.tabular-body {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: var(--table-gap-size, 1rem);
-}
-
-.tabular-row {
-    display: grid;
-    grid-template-columns: var(--table-column-size, repeat(5, 1fr));
-    grid-gap: var(--table-gap-size, 1rem);
-}
-</style>

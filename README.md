@@ -1,4 +1,5 @@
-# Tabular
+# Tabular v2
+# Vue 3 Only (use v1.*.* for vue 2)
 
 > Tab"u*lar (?),
 >
@@ -12,17 +13,25 @@
 
 ```js
 import PderasTable from '@pderas/tabular';
-Vue.use(PderasTable);
+
+createInertiaApp({
+  //
+  setup({ App }) {
+    const app = createApp({
+      render: () => h(App, props)
+    });
+
+    app.use(plugin);
+});
 ```
 
 > More advanced usage can be used to override the default sortBy order indication
 ```js
 // get the desired component
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
 import PderasTable from '@pderas/tabular';
 
-Vue.use(PderasTable, {
+app.use(PderasTable, {
     // Override the builtin components
     componentOverrides: {
         // Specifically the TableOrderIndicator component
@@ -142,50 +151,34 @@ export default {
     }
 }
 </script>
+```
 
-<style lang="scss">
-.tabular {
-    &-container {
-        /* Row Sizing Definition */
-        /* Gets passed to grid-template-columns */
-        /* https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns */
-        --table-column-size: repeat(2, 100px) minmax(400px, 50%) 1fr;
+## Development Setup
 
-        /* gap between cells */
-        --table-gap-size: 0rem;
-    }
+```sh
+npm install
+npm link
+npm run watch
+```
 
-    &-headers {
-        /* Apply background/text styling to the headers */
-        @apply bg-primary text-white font-bold p-4;
-    }
+## Link package in project
 
-    &-row {
-        /* basic table body styles */
-        @apply bg-white px-4 py-2;
+```sh
+npm link @pderas/tabular
+npm run hot
 
-        &:nth-child(odd) {
-            @apply bg-primary-100;
-        }
-    }
+@import 'tables.scss'; //template repo will have it
+```
 
-    /* Pagination button styles */
-    &-pagination {
-        &-row {
-            @apply flex items-center justify-center mt-4;
-        }
+### Update major/minor version in package.json and publish new package to npm
 
-        &-button {
-            @apply bg-white h-8 border border-gray-200 flex items-center justify-center shadow-md cursor-pointer mx-2;
-            min-width: 4rem;
+```sh
+version: "2.0.0" -> version: "2.0.1"
+```
 
-            &:hover,
-            &.active {
-                @apply bg-primary-100;
-            }
-        }
+### Compile and Minify for Production
 
-    }
-}
-</style>
+```sh
+npm run bundle
+npm publish
 ```

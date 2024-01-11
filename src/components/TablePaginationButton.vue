@@ -1,11 +1,18 @@
+<template>
+<div :class="computedClasses">
+    <slot />
+</div>
+</template>
+
 <script>
 export default {
-    functional: true,
+    inheritAttrs: false,
 
-    render(h, { slots, listeners, data }) {
-        const classes = [data.staticClass, data.class].filter(a => a).join(' ');
-        // build the div
-        return h('div', { class: classes, on: listeners }, slots().default );
+    computed: {
+        computedClasses() {
+            // Combining the classes from props
+            return [this.$attrs.class, this.$attrs.staticClass].filter(Boolean).join(' ');
+        }
     }
 };
 </script>
